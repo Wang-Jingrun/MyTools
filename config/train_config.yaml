@@ -1,0 +1,23 @@
+device: cuda:0
+epochs: 5
+optimizer: Adam
+learning_rate: 0.0001
+weight_decay: 0.0005
+
+
+lr_scheduler:
+  name: StepLR
+  step_size: 1
+  gamma: 0.1
+
+
+# model
+model: dcunet10
+save_path: ./output/dcunet10_weigths.pth
+load_path:
+
+
+# dataset
+dataset_path: ./mini_test
+batch_size: 1
+sample_rate: 48000
