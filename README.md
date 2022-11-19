@@ -27,17 +27,19 @@ autocut
    └─ __init__.py
 ```
 
-####Dataset
-'''Linux 命令
+#### Dataset
+```
 !wget https://datashare.is.ed.ac.uk/bitstream/handle/10283/2791/clean_trainset_28spk_wav.zip?sequence=2&isAllowed=y
 !wget https://datashare.is.ed.ac.uk/bitstream/handle/10283/2791/noisy_trainset_28spk_wav.zip?sequence=6&isAllowed=y
 
 !wget https://datashare.is.ed.ac.uk/bitstream/handle/10283/2791/clean_testset_wav.zip?sequence=1&isAllowed=y
 !wget https://datashare.is.ed.ac.uk/bitstream/handle/10283/2791/noisy_testset_wav.zip?sequence=5&isAllowed=y
 
+
 !unzip clean_trainset_28spk_wav.zip?sequence=2.3
 !unzip noisy_trainset_28spk_wav.zip?sequence=6
 !unzip clean_testset_wav.zip?sequence=1
 !unzip nnoisy_testset_wav.zip?sequence=5
 !ls
-'''
+```
+
