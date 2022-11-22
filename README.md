@@ -15,8 +15,9 @@ autocut
 |
 └─tools # tools for dataset preprocessing
 |  │  get_wav.py
-|  │  mat2wav.py
 |  │  resample.py
+|  │  mat2wav.py
+|  |  flac2wav.py
 |  └─ sphfile2wav.py
 |   
 └─trainer # The core code is located in the trainer folder.
