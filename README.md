@@ -12,13 +12,19 @@ autocut
 |
 └─config
 |  └─ train_config.yaml # parameters
+|
+└─tools # tools for dataset preprocessing
+|  │  get_wav.py
+|  │  mat2wav.py
+|  │  resample.py
+|  └─ sphfile2wav.py
 |   
 └─trainer # The core code is located in the trainer folder.
-   |   ComplexNN # Implementation of complex neural network.
-   |     │  CBatchNorm2d.py
-   |     │  CConv2d.py
-   |     │  CConvTranspose2d.py
-   |	 └─ __init__.py
+   |  ComplexNN # Implementation of complex neural network.
+   |    │  CBatchNorm2d.py
+   |    │  CConv2d.py
+   |    │  CConvTranspose2d.py
+   |	└─ __init__.py
    |
    │  dataLoader.py
    │  dcunet.py	# main models
