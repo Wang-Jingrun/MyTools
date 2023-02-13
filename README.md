@@ -16,6 +16,7 @@ autocut
 └─tools # tools for dataset preprocessing
 |  │  get_wav.py
 |  │  resample.py
+|  |  generate_dataset.py
 |  │  mat2wav.py
 |  |  flac2wav.py
 |  └─ sphfile2wav.py
