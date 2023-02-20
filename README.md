@@ -17,6 +17,7 @@ autocut
 |  │  get_wav.py
 |  │  resample.py
 |  |  generate_dataset.py
+|  |  gsp.py
 |  │  mat2wav.py
 |  |  flac2wav.py
 |  └─ sphfile2wav.py
