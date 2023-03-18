@@ -43,17 +43,23 @@ if __name__ == "__main__":
             snr = 10
             # 读取干净语音
             clean_file = os.path.join(dataset_path, clean_wav)
-            clean_data, fs = sf.read(clean_file, dtype='int16')
+            clean_data, fs = sf.read(clean_file)
+            alpha_pow = 1 / ((np.sqrt(np.sum(clean_data ** 2)) / ((clean_data.size) + 1e-7)) + 1e-7)
+            clean_data = alpha_pow * clean_data
 
             # 读取噪声
             noise_index = random.randint(0, len(noise_wavs) - 1)
             noise_file = os.path.join(dataset_path, noise_wavs[noise_index])
             if noise_index != 0:
                 noise_data, fs = sf.read(noise_file, dtype='int16')
+                alpha_pow = 1 / ((np.sqrt(np.sum(noise_data ** 2)) / ((noise_data.size) + 1e-7)) + 1e-7)
+                noise_data = alpha_pow * noise_data
             else:
                 # babble.wav数据似乎有问题，比其他数据小得多
-                noise_data, fs = sf.read(noise_file, dtype='float32')
-                noise_data = noise_data * 100000
+                noise_data, fs = sf.read(noise_file)
+                alpha_pow = 1 / ((np.sqrt(np.sum(noise_data ** 2)) / ((noise_data.size) + 1e-7)) + 1e-7)
+                noise_data = alpha_pow * noise_data
+                # noise_data = noise_data * 100000
 
             # 生成含噪语音路径
             noisy_file = os.path.join(dataset_path, new_dataset_name, clean_wav)
@@ -72,6 +78,3 @@ if __name__ == "__main__":
                                  os.path.join(serve_path, clean_wav).replace("\\", "/")))
             print('%s %s\n' % (noisy_file.replace("D:/PycharmProjects/DATASETS", "/data1/wjr/dataset/").replace("\\", "/").replace("//", "/"),
                                  os.path.join(serve_path, clean_wav).replace("\\", "/")))
-
-
-
