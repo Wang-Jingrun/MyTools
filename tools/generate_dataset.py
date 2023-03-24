@@ -22,7 +22,7 @@ class CreateDataset:
         self.num = len(self.clean_files)
 
     def generate_wavs(self, dataset_newname='Evaluation/LibriSpeech-test-snr=0', snr=0):
-        with open(dataset_newname.split('/')[-1] + 'txt', 'wt') as f:
+        with open(dataset_newname.split('/')[-1] + '.txt', 'wt') as f:
             for i in range(self.num):
                 # 读取干净语音
                 clean_file = os.path.join(self.dataset_path, self.clean_files[i])
